@@ -365,21 +365,6 @@ public class ScssStylesheet extends Node {
         return output;
     }
 
-    static {
-        String logFile = System.getProperty("java.util.logging.config.file");
-        if (logFile == null) {
-            try {
-                LogManager.getLogManager().readConfiguration(
-                        ScssStylesheet.class
-                                .getResourceAsStream("/logging.properties"));
-            } catch (SecurityException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
     @Override
     public Node copy() {
         throw new UnsupportedOperationException(
